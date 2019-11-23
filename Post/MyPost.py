@@ -9,4 +9,8 @@ class Post:
 
 
     def get_post(self):
-        return title + ' ' + post
+        return self.title + ' ' + self.post
+
+
+    def __str__(self):
+        return self.title
