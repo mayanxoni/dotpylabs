@@ -12,7 +12,9 @@ req = requests.get('http://bewakoof.com/desi-collection/')
 soup  = BeautifulSoup(req.content, 'html.parser')
 
 # for making the content beautiful
-print(soup.prettify())
+# print(soup.prettify())
+
+# for opening a CSV file in write mode
 fp = open('web.csv', 'w')
 
 
@@ -22,5 +24,4 @@ for products in soup.find_all('div' , {'class' : 'productCardBox'} ):
         fp.write(str(detail.find_all('b')[0].text))
         fp.write(',')
         fp.write(str(detail.find_all('b')[1].text))
-        break
-    break
+        fp.write('\n')
