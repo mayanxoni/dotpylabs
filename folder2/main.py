@@ -13,3 +13,14 @@ soup  = BeautifulSoup(req.content, 'html.parser')
 
 # for making the content beautiful
 print(soup.prettify())
+fp = open('web.csv', 'w')
+
+
+for products in soup.find_all('div' , {'class' : 'productCardBox'} ):
+    for detail in products.find_all('div', {'class' : 'productCardDetail'}):
+        print(detail.find_all('b'))
+        fp.write(str(detail.find_all('b')[0].text))
+        fp.write(',')
+        fp.write(str(detail.find_all('b')[1].text))
+        break
+    break
