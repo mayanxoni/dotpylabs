@@ -20,14 +20,19 @@ fp.write('t-shirt name , price , image\n')
 
 
 for products in soup.find_all('div' , {'class' : 'productCardBox'} ):
-    for img in products.find_all('div', {'class' : 'productCardImg'}):
-        print(detail.find_all('img'))
-        fp.write('\n')
+    
     for detail in products.find_all('div', {'class' : 'productCardDetail'}):
         print(detail.find_all('h3'))
-        fp.write(str(detail.find_all('h3')[0].text))
-        fp.write(',')
-        fp.write(str(detail.find_all('b')[1].text))
-        fp.write(',')
-    #     break
-    # break
+        # fp.write(str(detail.find_all('h3')[0].text))
+        # fp.write(',')
+        # fp.write(str(detail.find_all('b')[1].text))
+        # fp.write(',')
+        break
+    
+    for img in products.find_all('div', {'class' : 'productCardImg'}):
+        # print(detail.find_all('img'))
+        print(img)
+        # fp.write(str(detail.find_all('img')))
+        # fp.write('\n')
+        break
+    break
